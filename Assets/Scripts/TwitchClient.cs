@@ -6,6 +6,7 @@ using TwitchLib.Unity;
 using System.Threading.Tasks;
 using TwitchLib.Client.Events;
 using System;
+using Assets.Scripts;
 
 public class TwitchClient : MonoBehaviour
 {
@@ -33,6 +34,16 @@ public class TwitchClient : MonoBehaviour
     {
         Debug.Log("The bot just read a message in chat");
         Debug.Log($"{e.ChatMessage.Username}: {e.ChatMessage.Message}");
+        if(e.ChatMessage.Message == "!join")
+        {
+            //Lets us create a character out of a chat message
+            ChatCharacter unit = new ChatCharacter
+            {
+                Name = e.ChatMessage.Username,
+                Id = e.ChatMessage.UserId
+            };
+            ChatArmyController.AddCharacter(unit);
+        }
     }
 
     // Update is called once per frame
