@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TwitchLib.Client.Models;
+using TwitchLib.Unity;
+using System.Threading.Tasks;
+using TwitchLib.Client.Events;
+using System;
+
+public class TwitchClient : MonoBehaviour
+{
+    //Comeback and adjust this 
+    public Client client;
+    private string channelName = Secret.twitch_channel;
+    // Start is called before the first frame update
+    void Start()
+    {
+        //Always run in background
+        Application.runInBackground = true;
+        //tells bot which channel to join
+        ConnectionCredentials credentials = new ConnectionCredentials("hivemindgamebot", Secret.bot_access_token);
+        client = new Client();
+        client.Initialize(credentials, channelName);
+
+        //Event subscribing
+        client.OnMessageReceived += MessageRecieve;
+
+        //connect our bot to the channel
+        client.ConnectAsync();
+    }
+
+    private async Task MessageRecieve(object sender, OnMessageReceivedArgs e)
+    {
+        Debug.Log("The bot just read a message in chat");
+        Debug.Log($"{e.ChatMessage.Username}: {e.ChatMessage.Message}");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            client.SendMessage(client.JoinedChannels[0], "Hello World!");
+        }
+    }
+   
+
+
+}
