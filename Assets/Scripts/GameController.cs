@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject playerSpawn;
+    public GameObject target;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class GameController : MonoBehaviour
             GameObject newPlayer = Instantiate(playerPrefab, spawnPosition, spawnRotation);
             Debug.Log($"Spawning player: {chatCharacter.Name} at position: {spawnPosition}");
             newPlayer.GetComponentInChildren<PlayerInfo>().updatePlayer(chatCharacter);
+            newPlayer.GetComponent<ChatMover>().target = target.transform;
         }
     }
 }
