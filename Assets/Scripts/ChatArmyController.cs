@@ -33,4 +33,12 @@ public static class ChatArmyController
         Debug.Log("Chat army has been cleared.");
         Debug.Log("Current chat army count: " + chatArmy.Count);
     }
+
+    public static void Win()
+    {
+        foreach (ChatCharacter character in chatArmy)
+        {
+            character.Status = ChatFightStatus.win;
+        }
+    }
 }

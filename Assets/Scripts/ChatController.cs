@@ -1,6 +1,8 @@
 using Assets.Scripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,10 +16,14 @@ public class ChatController : MonoBehaviour
     public Vector3 spawn;
     public ChatCharacter chatInfo;
     public int attackTimer = 0; // Timer for attack cooldown
+    public Animator animatior;
+    private ChatFightStatus currentStatus;
 
     void Start()
     {
+
         agent = GetComponent<NavMeshAgent>();
+        animatior = GetComponentInChildren<Animator>();
         if (target != null)
         {
             agent.SetDestination(target.transform.position); // Set initial destination
@@ -26,24 +32,67 @@ public class ChatController : MonoBehaviour
 
     void Update()
     {
-        if(chatInfo.Status == ChatFightStatus.walk)
+        
+        if (chatInfo.Status == ChatFightStatus.walk)
         {
             Move();
         }
-        else if(chatInfo.Status == ChatFightStatus.attack)
+        else if (chatInfo.Status == ChatFightStatus.attack)
         {
             attack();
         }
-        else if(chatInfo.Status == ChatFightStatus.die)
+        else if (chatInfo.Status == ChatFightStatus.die)
         {
             // Handle death logic here
-            Debug.Log($"{chatInfo.Name} has died!");
+            UnityEngine.Debug.Log($"{chatInfo.Name} has died!");
             // You can add death logic, animations, etc. here
             Destroy(gameObject); // Destroy the game object when dead
         }
+        else if (chatInfo.Status == ChatFightStatus.win)
+        {
+            win();
+        }
+
     }
+
+    private void ChangeAnimation(ChatFightStatus status, float crossFase = 0.2f)
+    {
+        if (currentStatus != status)
+        {
+            string animation = "";
+            switch (status)
+            {
+                case ChatFightStatus.walk:
+                    animation = "walk";
+                    break;
+                case ChatFightStatus.attack:
+                    animation = "fight";
+                    break;
+                case ChatFightStatus.die:
+                    animation = "die";
+                    break;
+                case ChatFightStatus.win:
+                    animation = "win";
+                    break;
+                default:
+                    animation = "idle";
+                    break;
+            }
+            currentStatus = status;
+            UnityEngine.Debug.LogWarning(animation);
+            animatior.CrossFade(animation, crossFase);
+        }
+    }
+
+    private void win()
+    {
+        ChangeAnimation(ChatFightStatus.win);
+        //animation.Play();
+    }
+
     void attack()
     {
+        ChangeAnimation(ChatFightStatus.attack);
         if(attackTimer <= 0)
         {
             target.GetComponent<BossController>().TakeDamage(chatInfo.Damage);
@@ -59,6 +108,7 @@ public class ChatController : MonoBehaviour
     }
     void Move()
     {
+        ChangeAnimation(ChatFightStatus.walk);
         if (target != null)
         {
             agent.SetDestination(target.transform.position);
@@ -69,7 +119,7 @@ public class ChatController : MonoBehaviour
             offNavMeshCounter++;
             if (offNavMeshCounter > 5) // If off NavMesh for too long, reset position
             {
-                Debug.LogWarning("Agent has been off NavMesh for too long, repositioning...");
+                UnityEngine.Debug.LogWarning("Agent has been off NavMesh for too long, repositioning...");
                 agent.Warp(spawn); // Warp to spawn position
                 offNavMeshCounter = 0; // Reset counter after repositioning
             }

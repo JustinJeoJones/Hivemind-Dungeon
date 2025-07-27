@@ -45,5 +45,7 @@ public class BossController : MonoBehaviour
     void Die()
     {
         Destroy(bossInstance);
+        trigger.enabled = false;
+        ChatArmyController.Win();
     }
 }
