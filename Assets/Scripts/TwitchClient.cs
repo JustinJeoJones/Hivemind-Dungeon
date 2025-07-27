@@ -53,6 +53,16 @@ public class TwitchClient : MonoBehaviour
         {
             client.SendMessage(client.JoinedChannels[0], "Hello World!");
         }
+        //debugging purposes
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            ChatCharacter unit = new ChatCharacter
+            {
+                Name = "dummi",
+                Id = "1"
+            };
+            ChatArmyController.AddCharacter(unit);
+        }
     }
    
 

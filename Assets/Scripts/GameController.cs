@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour
             Debug.Log($"Spawning player: {chatCharacter.Name} at position: {spawnPosition}");
             newPlayer.GetComponentInChildren<PlayerInfo>().updatePlayer(chatCharacter);
             newPlayer.GetComponent<ChatMover>().target = target.transform;
+            newPlayer.GetComponent<ChatMover>().spawn = spawnPosition;
         }
     }
 }
