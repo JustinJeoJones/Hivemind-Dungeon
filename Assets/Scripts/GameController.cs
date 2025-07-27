@@ -31,10 +31,12 @@ public class GameController : MonoBehaviour
         {
             Debug.Log(chatCharacter.Name);
             GameObject newPlayer = Instantiate(playerPrefab, spawnPosition, spawnRotation);
+            
             Debug.Log($"Spawning player: {chatCharacter.Name} at position: {spawnPosition}");
             newPlayer.GetComponentInChildren<PlayerInfo>().updatePlayer(chatCharacter);
-            newPlayer.GetComponent<ChatMover>().target = target.transform;
-            newPlayer.GetComponent<ChatMover>().spawn = spawnPosition;
+            newPlayer.GetComponent<ChatController>().chatInfo = chatCharacter;
+            newPlayer.GetComponent<ChatController>().target = target;
+            newPlayer.GetComponent<ChatController>().spawn = spawnPosition;
         }
     }
 }

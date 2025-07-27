@@ -6,4 +6,5 @@ public enum ChatFightStatus
 {
     walk,
     attack,
+    die,
 }
