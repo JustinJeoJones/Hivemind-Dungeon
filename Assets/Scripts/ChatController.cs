@@ -116,6 +116,16 @@ public class ChatController : MonoBehaviour
             }
         }
     }
+    public void TakeDamage(int dmg)
+    {
+        chatInfo.Health -= dmg;
+        if(chatInfo.Health <= 0)
+        {
+            chatInfo.IsAlive = false;
+            chatInfo.Health = chatInfo.MaxHealth;
+            Destroy(gameObject);
+        }
+    }
     void Move()
     {
         UnityEngine.Debug.Log($"{chatInfo.Name} has died!");

@@ -12,23 +12,32 @@ public class TwitchClient : MonoBehaviour
 {
     //Comeback and adjust this 
     public Client client;
-    private string channelName = Secret.twitch_channel;
+    //private string channelName = Secret.twitch_channel;
     private int tempId = 0;
     // Start is called before the first frame update
     void Start()
     {
+        SetupBot();
+    }
+
+    public async void SetupBot()
+    {
+        if(client != null)
+        {
+            await client.DisconnectAsync();
+        }
         //Always run in background
         Application.runInBackground = true;
         //tells bot which channel to join
         ConnectionCredentials credentials = new ConnectionCredentials("hivemindgamebot", Secret.bot_access_token);
         client = new Client();
-        client.Initialize(credentials, channelName);
+        client.Initialize(credentials, Secret.twitch_channel);
 
         //Event subscribing
         client.OnMessageReceived += MessageRecieve;
 
         //connect our bot to the channel
-        client.ConnectAsync();
+        await client.ConnectAsync();
     }
 
     private async Task MessageRecieve(object sender, OnMessageReceivedArgs e)
@@ -50,21 +59,21 @@ public class TwitchClient : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            client.SendMessage(client.JoinedChannels[0], "Hello World!");
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha0))
+        //{
+        //    client.SendMessage(client.JoinedChannels[0], "Hello World!");
+        //}
         //debugging purposes
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            ChatCharacter unit = new ChatCharacter
-            {
-                Name = $"dummi{tempId}",
-                Id = $"Temp:{tempId}"
-            };
-            tempId++;
-            ChatArmyController.AddCharacter(unit);
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftControl))
+        //{
+        //    ChatCharacter unit = new ChatCharacter
+        //    {
+        //        Name = $"dummi{tempId}",
+        //        Id = $"Temp:{tempId}"
+        //    };
+        //    tempId++;
+        //    ChatArmyController.AddCharacter(unit);
+        //}
     }
    
 

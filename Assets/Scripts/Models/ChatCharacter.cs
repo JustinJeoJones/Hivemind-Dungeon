@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public string Id { get; set; } = "Rizz";
         public bool IsAlive { get; set; } = true;
         public ChatFightStatus Status { get; set; } = ChatFightStatus.walk;
+        public int MaxHealth { get; set; } = 2;
         public int Health { get; set; } = 2;
         public int Damage { get; set; } = 1;
     }

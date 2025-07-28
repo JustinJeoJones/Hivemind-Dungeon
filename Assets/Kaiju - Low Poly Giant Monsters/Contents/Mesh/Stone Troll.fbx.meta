@@ -1,77 +1,209 @@
 fileFormatVersion: 2
 guid: adaa1ef3043dbca44acb65d2e4d5660a
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Armature
-    100002: Head
-    100004: Head_end
-    100006: Hips
-    100008: Left Arm
-    100010: Left Forearm
-    100012: Left Forearm_end
-    100014: Left Leg Low
-    100016: Left Leg Low_end
-    100018: Left Leg Up
-    100020: Left Shoulder
-    100022: Right Arm
-    100024: Right Forearm
-    100026: Right Forearm_end
-    100028: Right Leg Low
-    100030: Right Leg Low_end
-    100032: Right Leg Up
-    100034: Right Shoulder
-    100036: Spine 1
-    100038: Spine 2
-    100040: //RootNode
-    100042: Stone Troll
-    100044: Left Foot
-    100046: Left Foot_end
-    100048: Right Foot
-    100050: Right Foot_end
-    100052: Stone Troll Mesh
-    400000: Armature
-    400002: Head
-    400004: Head_end
-    400006: Hips
-    400008: Left Arm
-    400010: Left Forearm
-    400012: Left Forearm_end
-    400014: Left Leg Low
-    400016: Left Leg Low_end
-    400018: Left Leg Up
-    400020: Left Shoulder
-    400022: Right Arm
-    400024: Right Forearm
-    400026: Right Forearm_end
-    400028: Right Leg Low
-    400030: Right Leg Low_end
-    400032: Right Leg Up
-    400034: Right Shoulder
-    400036: Spine 1
-    400038: Spine 2
-    400040: //RootNode
-    400042: Stone Troll
-    400044: Left Foot
-    400046: Left Foot_end
-    400048: Right Foot
-    400050: Right Foot_end
-    400052: Stone Troll Mesh
-    2100000: No Name
-    2100002: Moss
-    2100004: Stone
-    2100006: Eye
-    2300000: Stone Troll
-    3300000: Stone Troll
-    4300000: Stone Troll
-    4300002: Stone Troll Mesh
-    9500000: //RootNode
-    13700000: Stone Troll
-    13700002: Stone Troll Mesh
-    2186277476908879412: ImportLogs
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Armature
+  - first:
+      1: 100002
+    second: Head
+  - first:
+      1: 100004
+    second: Head_end
+  - first:
+      1: 100006
+    second: Hips
+  - first:
+      1: 100008
+    second: Left Arm
+  - first:
+      1: 100010
+    second: Left Forearm
+  - first:
+      1: 100012
+    second: Left Forearm_end
+  - first:
+      1: 100014
+    second: Left Leg Low
+  - first:
+      1: 100016
+    second: Left Leg Low_end
+  - first:
+      1: 100018
+    second: Left Leg Up
+  - first:
+      1: 100020
+    second: Left Shoulder
+  - first:
+      1: 100022
+    second: Right Arm
+  - first:
+      1: 100024
+    second: Right Forearm
+  - first:
+      1: 100026
+    second: Right Forearm_end
+  - first:
+      1: 100028
+    second: Right Leg Low
+  - first:
+      1: 100030
+    second: Right Leg Low_end
+  - first:
+      1: 100032
+    second: Right Leg Up
+  - first:
+      1: 100034
+    second: Right Shoulder
+  - first:
+      1: 100036
+    second: Spine 1
+  - first:
+      1: 100038
+    second: Spine 2
+  - first:
+      1: 100040
+    second: //RootNode
+  - first:
+      1: 100042
+    second: Stone Troll
+  - first:
+      1: 100044
+    second: Left Foot
+  - first:
+      1: 100046
+    second: Left Foot_end
+  - first:
+      1: 100048
+    second: Right Foot
+  - first:
+      1: 100050
+    second: Right Foot_end
+  - first:
+      1: 100052
+    second: Stone Troll Mesh
+  - first:
+      4: 400000
+    second: Armature
+  - first:
+      4: 400002
+    second: Head
+  - first:
+      4: 400004
+    second: Head_end
+  - first:
+      4: 400006
+    second: Hips
+  - first:
+      4: 400008
+    second: Left Arm
+  - first:
+      4: 400010
+    second: Left Forearm
+  - first:
+      4: 400012
+    second: Left Forearm_end
+  - first:
+      4: 400014
+    second: Left Leg Low
+  - first:
+      4: 400016
+    second: Left Leg Low_end
+  - first:
+      4: 400018
+    second: Left Leg Up
+  - first:
+      4: 400020
+    second: Left Shoulder
+  - first:
+      4: 400022
+    second: Right Arm
+  - first:
+      4: 400024
+    second: Right Forearm
+  - first:
+      4: 400026
+    second: Right Forearm_end
+  - first:
+      4: 400028
+    second: Right Leg Low
+  - first:
+      4: 400030
+    second: Right Leg Low_end
+  - first:
+      4: 400032
+    second: Right Leg Up
+  - first:
+      4: 400034
+    second: Right Shoulder
+  - first:
+      4: 400036
+    second: Spine 1
+  - first:
+      4: 400038
+    second: Spine 2
+  - first:
+      4: 400040
+    second: //RootNode
+  - first:
+      4: 400042
+    second: Stone Troll
+  - first:
+      4: 400044
+    second: Left Foot
+  - first:
+      4: 400046
+    second: Left Foot_end
+  - first:
+      4: 400048
+    second: Right Foot
+  - first:
+      4: 400050
+    second: Right Foot_end
+  - first:
+      4: 400052
+    second: Stone Troll Mesh
+  - first:
+      21: 2100000
+    second: No Name
+  - first:
+      21: 2100002
+    second: Moss
+  - first:
+      21: 2100004
+    second: Stone
+  - first:
+      21: 2100006
+    second: Eye
+  - first:
+      23: 2300000
+    second: Stone Troll
+  - first:
+      33: 3300000
+    second: Stone Troll
+  - first:
+      43: 4300000
+    second: Stone Troll
+  - first:
+      43: 4300002
+    second: Stone Troll Mesh
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Stone Troll
+  - first:
+      137: 13700002
+    second: Stone Troll Mesh
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -80,6 +212,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -104,25 +237,34 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -131,10 +273,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human:
     - boneName: Hips
       humanName: Hips
@@ -355,17 +497,17 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Left Arm
       parentName: Left Shoulder
-      position: {x: -0.00000015258793, y: 0.54426605, z: -1.1823431e-13}
+      position: {x: -0.1374329, y: 0.94943464, z: 0.000000030091186}
       rotation: {x: 0.0000000229245, y: 0.000000049107154, z: 0.17555131, w: 0.9844703}
       scale: {x: 1, y: 1, z: 1}
     - name: Left Forearm
       parentName: Left Arm
-      position: {x: 0.00000015258782, y: 1.0236056, z: 0}
+      position: {x: 0.051214103, y: 2.99968, z: 0.000000020304089}
       rotation: {x: -0.0000000086373895, y: -0.00000009272825, z: 0.024856403, w: 0.999691}
       scale: {x: 1, y: 0.9999999, z: 1}
     - name: Left Forearm_end
       parentName: Left Forearm
-      position: {x: -0, y: 1.1828974, z: 0}
+      position: {x: 0.09256227, y: 2.40446, z: 0.000000022188884}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Right Shoulder
@@ -376,12 +518,12 @@ ModelImporter:
     - name: Right Arm
       parentName: Right Shoulder
       position: {x: 0.000000038147025, y: 0.96211594, z: 8.185452e-14}
-      rotation: {x: -0.0025332586, y: -0.07052185, z: -0.07012757, w: 0.99503887}
+      rotation: {x: -0.0025332593, y: -0.07052185, z: -0.07012759, w: 0.99503887}
       scale: {x: 1, y: 0.9999999, z: 1}
     - name: Right Forearm
       parentName: Right Arm
       position: {x: 0.00000020466744, y: 1.7558844, z: 0}
-      rotation: {x: -0.00055998674, y: -0.014225556, z: -0.026758611, w: 0.9995405}
+      rotation: {x: -0.0005599868, y: -0.0142255565, z: -0.026758613, w: 0.99954057}
       scale: {x: 1, y: 1.0000001, z: 1}
     - name: Right Forearm_end
       parentName: Right Forearm
@@ -400,13 +542,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
