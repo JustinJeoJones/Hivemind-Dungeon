@@ -13,6 +13,7 @@ public class TwitchClient : MonoBehaviour
     //Comeback and adjust this 
     public Client client;
     private string channelName = Secret.twitch_channel;
+    private int tempId = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,9 +59,10 @@ public class TwitchClient : MonoBehaviour
         {
             ChatCharacter unit = new ChatCharacter
             {
-                Name = "dummi",
-                Id = "1"
+                Name = $"dummi{tempId}",
+                Id = $"Temp:{tempId}"
             };
+            tempId++;
             ChatArmyController.AddCharacter(unit);
         }
     }

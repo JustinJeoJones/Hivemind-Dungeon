@@ -18,21 +18,28 @@ public class ChatController : MonoBehaviour
     public int attackTimer = 0; // Timer for attack cooldown
     public Animator animatior;
     private ChatFightStatus currentStatus;
+    public GameObject model;
 
     void Start()
     {
 
         agent = GetComponent<NavMeshAgent>();
         animatior = GetComponentInChildren<Animator>();
+        animatior.animatePhysics = true;
         if (target != null)
         {
             agent.SetDestination(target.transform.position); // Set initial destination
         }
+        animatior.CrossFade("walk", 0.01f);
     }
 
     void Update()
     {
-        
+        if (target != null)
+        {
+            //model.transform.LookAt(new Vector3(transform.position.x, 180, transform.position.z));
+            
+        }
         if (chatInfo.Status == ChatFightStatus.walk)
         {
             Move();
@@ -73,6 +80,7 @@ public class ChatController : MonoBehaviour
                     break;
                 case ChatFightStatus.win:
                     animation = "win";
+                    //model.transform.Translate(Vector3.down, Space.World);
                     break;
                 default:
                     animation = "idle";
@@ -86,12 +94,14 @@ public class ChatController : MonoBehaviour
 
     private void win()
     {
+        agent.isStopped = true;
         ChangeAnimation(ChatFightStatus.win);
         //animation.Play();
     }
 
     void attack()
     {
+        agent.isStopped = true;
         ChangeAnimation(ChatFightStatus.attack);
         if(attackTimer <= 0)
         {
@@ -108,6 +118,8 @@ public class ChatController : MonoBehaviour
     }
     void Move()
     {
+        UnityEngine.Debug.Log($"{chatInfo.Name} has died!");
+        agent.isStopped = false;
         ChangeAnimation(ChatFightStatus.walk);
         if (target != null)
         {
